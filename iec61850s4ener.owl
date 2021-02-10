@@ -1,0 +1,2982 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://saref.etsi.org/saref4ener/"
+     xml:base="https://saref.etsi.org/saref4ener/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:saref="https://saref.etsi.org/core/"
+     xmlns:s4ener="https://saref.etsi.org/saref4ener/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://saref.etsi.org/saref4ener/">
+        <owl:versionIRI rdf:resource="https://saref.etsi.org/saref4ener/v1.1.2/"/>
+        <owl:imports rdf:resource="https://saref.etsi.org/core/v3.1.1/"/>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-04</dcterms:created>
+        <dcterms:creator rdf:resource="https://www.linkedin.com/in/lauradaniele"/>
+        <dcterms:description xml:lang="en">SAREF4ENER is an extension of SAREF for the Energy domain that was created in collaboration with Energy@Home (http://www.energy-home.it) and EEBus (http://www.eebus.org/en), the major Italy- and Germany-based industry associations, to enable the interconnection of their (different) data models. SAREF4ENER focuses on demand response scenarios, in which customers can offer flexibility to the Smart Grid to manage their smart home devices by means of a Customer Energy Manager (CEM). The CEM is a logical function for optimizing energy consumption and/or production that can reside either in the home gateway or in the cloud. SAREF4ENER is published as an ETSI tecnical specificatoion (ETSI TS 103 410-1).</dcterms:description>
+        <dcterms:license rdf:resource="https://forge.etsi.org/etsi-software-license"/>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-12-13</dcterms:modified>
+        <dcterms:publisher rdf:resource="https://www.etsi.org/"/>
+        <dcterms:source rdf:resource="https://saref.etsi.org/sources/saref4ener/"/>
+        <dcterms:title xml:lang="en">SAREF4ENER: an extension of SAREF for the energy domain created in collaboration with Energy@Home and EEBus associations</dcterms:title>
+        <vann:preferredNamespacePrefix>s4ener</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://saref.etsi.org/saref4ener/</vann:preferredNamespaceUri>
+        <rdfs:seeAlso rdf:resource="https://www.etsi.org/deliver/etsi_ts/103400_103499/10341001/01.01.02_60/ts_10341001v010102p.pdf"/>
+        <owl:versionInfo>v1.1.2</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/belongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/belongsTo">
+        <rdfs:comment xml:lang="en">A relationship identifying the ownership of an entity. In particular, a slot belongs to a power sequence, a power sequence belongs to an alternative, an alternative  belongs to a power profile, a power profile belongs to a device.  </rdfs:comment>
+        <rdfs:label xml:lang="en">belongs to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/exposes -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/exposes">
+        <rdfs:comment xml:lang="en">A relationship between a device and its power profile</rdfs:comment>
+        <rdfs:label xml:lang="en">exposes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasAppliedEventActionConsume -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasAppliedEventActionConsume">
+        <rdfs:comment xml:lang="en">A relationship between the state of a load control event consume and the action to be performed as a consequence of this event.</rdfs:comment>
+        <rdfs:label xml:lang="en">has applied event action consume</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasAppliedEventActionProduce -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasAppliedEventActionProduce">
+        <rdfs:comment xml:lang="en">A relationship between the state of a load control event produce and the action to be performed as a consequence of this event.</rdfs:comment>
+        <rdfs:label xml:lang="en">has applied event action produce</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasConnection -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasConnection">
+        <rdfs:comment xml:lang="en">In the Remote Network Management (RemoteNWM) use case, a relationship between a node in a network (i.e., a s4ee:Device) and its connections (i.e., a s4ee:DeviceConnections). The same s4ee:Device (or node) can have multiple device connections as it can be connected to several networks at the same time.</rdfs:comment>
+        <rdfs:label xml:lang="en">has connection</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasDevice -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasDevice">
+        <rdfs:comment xml:lang="en">A relationship between a load control event (used to send overload warning severity level and related load control commands) and the device interested by this event.</rdfs:comment>
+        <rdfs:label xml:lang="en">has device</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasEnergy -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasEnergy">
+        <rdfs:range rdf:resource="https://saref.etsi.org/saref4ener/Energy"/>
+        <rdfs:comment xml:lang="en">A relationship between a power sequence and its energy (in terms of value and unit of measure)</rdfs:comment>
+        <rdfs:label xml:lang="en">has energy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasEnergyValueType -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasEnergyValueType">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/saref4ener/hasValueType"/>
+        <rdfs:comment xml:lang="en">A relationship representing an energy value type</rdfs:comment>
+        <rdfs:label xml:lang="en">has energy value type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasEventStateConsume -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasEventStateConsume">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/hasState"/>
+        <rdfs:comment xml:lang="en">A relationship between the specification of the state of a load control event consume and the value that this state can assume.</rdfs:comment>
+        <rdfs:label xml:lang="en">has event state consume</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasEventStateProduce -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasEventStateProduce">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/hasState"/>
+        <rdfs:comment xml:lang="en">A relationship between the specification of the state of a load control event produce and the value that this state can assume.</rdfs:comment>
+        <rdfs:label xml:lang="en">has event state produce</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasExpression -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasExpression">
+        <rdfs:comment xml:lang="en">A relationship between an appliance parameter compatibility action and the associated expressions</rdfs:comment>
+        <rdfs:label xml:lang="en">has expression</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasFunction -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasFunction">
+        <rdfs:comment xml:lang="en">A relationship identifying the functions performed by an actuator level and an actuator switch</rdfs:comment>
+        <rdfs:label xml:lang="en">has function</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasPowerValueType -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasPowerValueType">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/saref4ener/hasValueType"/>
+        <rdfs:comment xml:lang="en">A relationship representing a power value type</rdfs:comment>
+        <rdfs:label xml:lang="en">has power value type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hasValueType -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/hasValueType">
+        <rdfs:comment xml:lang="en">A relation representing the value type of an entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has value type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/has_DOService -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/has_DOService">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/offers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/has_DataObjectType -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/has_DataObjectType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/has_LDService -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/has_LDService">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/offers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/has_LNService -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/has_LNService">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/offers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/has_funtionalConstraint -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/has_funtionalConstraint">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/has_input_parameter -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/has_input_parameter"/>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/has_output_parameter -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/has_output_parameter"/>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/receives -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/receives">
+        <rdfs:comment xml:lang="en">A relationship between a device (e.g., an appliance or a smart meter) and a load control event</rdfs:comment>
+        <rdfs:label xml:lang="en">receives</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/triggersEventActionConsume -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/triggersEventActionConsume">
+        <rdfs:comment xml:lang="en">A relationship between a load control event and the consume action triggered by this event</rdfs:comment>
+        <rdfs:label xml:lang="en">triggers event action consume</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/triggersEventActionProduce -->
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4ener/triggersEventActionProduce">
+        <rdfs:comment xml:lang="en">A relationship between a load control event and the produce action triggered by this event</rdfs:comment>
+        <rdfs:label xml:lang="en">triggers event action produce</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DAName -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/DAName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DOName -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/DOName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DORef -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/DORef">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/FC -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/FC">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>BL</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>CF</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>DC</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>EX</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>MX</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>OR</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>SE</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>SG</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>SP</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first>SR</rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                        <rdf:first>ST</rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                                <rdf:first>SV</rdf:first>
+                                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LDName -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/LDName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LDRef -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/LDRef">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LNName -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/LNName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LNRef -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/LNRef">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/activateSlot -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/activateSlot">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether a slot is used (activateSlot = true) or not (activateSlot = false). SHALL be present if a slot is optional (i.e., the property s4ee:optionalSlot is TRUE), otherwise SHALL be absent (i.e. in case the slot is mandatory).</rdfs:comment>
+        <rdfs:label xml:lang="en">activate slot</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/activeRepetitionNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/activeRepetitionNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Indicates the current repetition of the sequence of slots. SHALL be present if a power sequence can repeat its sequence of slots (i.e., if s4ee:repetitionTotal is present and has a value &gt; 1). Otherwise, it SHALL be absent. </rdfs:comment>
+        <rdfs:label xml:lang="en">active repetition number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/activeSlotNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/activeSlotNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Indicates the currently active slot number, if the power sequence state is set to &apos;running&apos; or &apos;paused&apos;. Otherwise it SHALL be omitted.</rdfs:comment>
+        <rdfs:label xml:lang="en">active slot number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/alternativesCount -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/alternativesCount">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Indicates the number of alternatives groups provided by a power profile</rdfs:comment>
+        <rdfs:label xml:lang="en">alternatives count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/alternativesGroupID -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/alternativesGroupID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The endpoint-wide unique identifier for the alternatives group instances provided by a power profile</rdfs:comment>
+        <rdfs:label xml:lang="en">alternatives group ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/brandName -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/brandName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Provides the name of the brand of a device. Useful where the name of the brand and the vendor differs.</rdfs:comment>
+        <rdfs:label xml:lang="en">brand name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/cdc-id -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/cdc-id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/cheapest -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/cheapest">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether a power sequence applies a configuration that minimises the user’s energy bill (if set to TRUE). MAY be present. Absence of this element is equal to the presence with value FALSE. </rdfs:comment>
+        <rdfs:label xml:lang="en">cheapest</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/deviceCode -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/deviceCode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Provides a device code for the device as defined by the manufacturer.</rdfs:comment>
+        <rdfs:label xml:lang="en">device code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/deviceName -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/deviceName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Provides the name of the device as defined by the manufacturer.</rdfs:comment>
+        <rdfs:label xml:lang="en">device name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/eventID -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/eventID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Used in the Demand Response use case to identify an event</rdfs:comment>
+        <rdfs:label xml:lang="en">event ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/greenest -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/greenest">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether a power sequence optimises the configuration towards the maximum availability of renewable energy (if set to TRUE). MAY be present. Absence of this element is equal to the presence with value FALSE. </rdfs:comment>
+        <rdfs:label xml:lang="en">greenest</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/hardwareRevision -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/hardwareRevision">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Indicates the hardware revision of the device as defined by the manufacturer.</rdfs:comment>
+        <rdfs:label xml:lang="en">hardware revision </rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/isPausable -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/isPausable">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Specifies if the power sequence is pausable.</rdfs:comment>
+        <rdfs:label xml:lang="en">is pausable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/isStoppable -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/isStoppable">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Specifies if the power sequence is stoppable.</rdfs:comment>
+        <rdfs:label xml:lang="en">is stoppable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/m-o-c -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/m-o-c">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>conditional</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>mandatory</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>optional</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/manufacturerDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/manufacturerDescription">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A description for the device as defined by the manufacturer.</rdfs:comment>
+        <rdfs:label xml:lang="en">manufacturer description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/manufacturerLabel -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/manufacturerLabel">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A short label of the device as defined by the manufacturer. </rdfs:comment>
+        <rdfs:label xml:lang="en">manufacturer label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/manufacturerNodeIdentification -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/manufacturerNodeIdentification">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Indicates a node identification for the device as defined by the manufacturer. This could be used for the identification of a device, even if it was removed from the network and rejoined later with changed node address.</rdfs:comment>
+        <rdfs:label xml:lang="en">manufacturer node identification</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/maxCyclesPerDay -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/maxCyclesPerDay">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">States the maximum amount of starts a power sequence (of a device) allows per day.</rdfs:comment>
+        <rdfs:label xml:lang="en">max cycles per day</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/measurementID -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/measurementID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Enables the identification of different sensors on one EEBus address.</rdfs:comment>
+        <rdfs:label xml:lang="en">measurement id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/messagingNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/messagingNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">An identifier for one specific message. If a message is marked as obsolete, this number can be used to identify the original message.</rdfs:comment>
+        <rdfs:label xml:lang="en">messaging number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/messagingType -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/messagingType">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>alarm</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>emergency</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>information</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>logging</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>obsolete</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>warning</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Indicates the type of the message. Possible values are:
+-	logging (used for messages, that shall be stored in a log file)
+-	information (messages, that shall be presented to the customer on a display; lower priority)
+-	warning (messages, that shall be presented to the customer on a display; medium priority)
+-	alarm (messages, that shall be presented to the customer on a display; high priority; if there is an alarm device in the household, it shall generate an alarm)
+-	emergency (messages, that shall be presented to the customer on a display; very high priority; if there is an alarm device in the household, it shall generate an alarm; additionally, if possible and configured, an emergency call shall be done)
+-	obsolete (previously sent messages, that shall be marked as obsolete)</rdfs:comment>
+        <rdfs:label xml:lang="en">messaging type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/nodeRemoteControllable -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/nodeRemoteControllable">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the power profile of a device is configured for remote control (e.g., by an energy management system).This refers to the selection chosen by the user on the remote control feature of the device. If nodeRemoteControllable is equal to FALSE, all the supported power sequences shall set the sequenceRemoteControllable property to FALSE. If nodeRemoteControllable is equal to TRUE, at least one power sequence shall be remotely controllable by setting the sequenceRemoteControllable property to TRUE.</rdfs:comment>
+        <rdfs:label xml:lang="en">node remote controllable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/optionalSlot -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/optionalSlot">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether a slot is optional (if set to TRUE). Otherwise, if a slot is mandatory, SHALL be omitted or set to FALSE. Note: This element applies to every repetition of the slot number.</rdfs:comment>
+        <rdfs:label xml:lang="en">optional slot</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/powerSource -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/powerSource">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>battery</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>dc</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>mains3Phase</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>mainsSinglePhase</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>unknown</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Indicates the power source of a device. Possible values are e.g. mainsSinglePhase or battery </rdfs:comment>
+        <rdfs:label xml:lang="en">power source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/repetitionsTotal -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/repetitionsTotal">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Contains the total number of repetitions, if a power sequence repeats its sequence of slots. Absence of the element is equal to a presence with a value of 0 (zero). SHALL be absent if the value is 1. </rdfs:comment>
+        <rdfs:label xml:lang="en">repetition total</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/sequenceID -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/sequenceID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Provides a unique power sequence identifier for a certain device</rdfs:comment>
+        <rdfs:label xml:lang="en">sequence ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/sequenceRemoteControllable -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/sequenceRemoteControllable">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Denotes whether a power sequence is modifiable (if value is TRUE) or not (if value is FALSE). Modifiability is required to configure power sequences and slots. It is also required to change a power sequence state.</rdfs:comment>
+        <rdfs:label xml:lang="en">sequence remote controllable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/serialNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/serialNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Indicates the serial number of a device as defined by the manufacturer. Usually the same as printed on the case.</rdfs:comment>
+        <rdfs:label xml:lang="en">serial number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/slotActivated -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/slotActivated">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">If a slot is optional, represents the current status of the slot (true = the slot will be executed, false = the slot will not be executed). If the slot is not optional, this element SHALL be absent.</rdfs:comment>
+        <rdfs:label xml:lang="en">slot activated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/slotNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/slotNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Provides a unique slot identifier for a certain power sequence</rdfs:comment>
+        <rdfs:label xml:lang="en">slot number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/softwareRevision -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/softwareRevision">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Indicates the software revision of a device as defined by the manufacturer.</rdfs:comment>
+        <rdfs:label xml:lang="en">software revision</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/supportsReselection -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/supportsReselection">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">If set toTRUE, the power profile of a device does not restrict the number of power sequence re-selections by the CEM, i.e. within a given alternative the CEM may first choose one power sequence, alter the selection by configuring another sequence later on, then alter the selection again, etc. (provided the process rules and data still permit configuration). If supportsReselection is set to FALSE, the device permits the CEM to select a power sequence of an alternative only once.</rdfs:comment>
+        <rdfs:label xml:lang="en">supports reselection</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/supportsSingleSlotSchedulingOnly -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/supportsSingleSlotSchedulingOnly">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">If set toTRUE, the power profile of a device does NOT permit the modification of more than one slot per configuration command.</rdfs:comment>
+        <rdfs:label xml:lang="en">supports single slot scheduling only</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/taskIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/taskIdentifier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Represents the task identifier of the power sequence.</rdfs:comment>
+        <rdfs:label xml:lang="en">task identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/totalSequencesCountMax -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/totalSequencesCountMax">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment xml:lang="en">Represents the total number of power sequences supported by the power profile of a device</rdfs:comment>
+        <rdfs:label xml:lang="en">total sequences count max</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/valueSource -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/valueSource">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>calculatedValue</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>empiricalValue</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>measuredValue</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Indicates the source (origin/foundation) of the measurement forecasted values for a power sequence. If absent, the source is undefined. Remark: This element shall express the reliability of the forecast.</rdfs:comment>
+        <rdfs:label xml:lang="en">value source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/valueTendency -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/valueTendency">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>falling</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>rising</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>stable</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Indicates whether the tendency of a measurement is rising, stable or falling.</rdfs:comment>
+        <rdfs:label xml:lang="en">value tendency</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/vendorCode -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/vendorCode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Provides a code for the vendor of the device as defined by the manufacturer.</rdfs:comment>
+        <rdfs:label xml:lang="en">vendor code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/vendorName -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/vendorName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Provides the name of the vendor of the device as defined by the manufacturer.</rdfs:comment>
+        <rdfs:label xml:lang="en">vendor name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/xsdDuration -->
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4ener/xsdDuration">
+        <rdfs:comment xml:lang="en">This property is added to the  time:DurationDescription class to allow to express time duration also as xsd:duration. This is necessary because in the EEBus/E@h model time is always expressed as xsd:duration. We use this property to express the following time information in the EEBus/E@h model:
+
+- the startTime of the power sequence (in the PowerSequence class). SHALL be present
+- the endTime of the power sequence (in the PowerSequence class). If the value is available, it SHALL be denoted here. Otherwise the element SHALL be omitted.
+- the startTime of measurement as absolute or relative value (in the Measurement class).
+- the endTime of measurement as absolute or relative value (in the Measurement class).
+
+The duration is expected to be described as in xsd:duration</rdfs:comment>
+        <rdfs:label xml:lang="en">duration in xsd </rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2006/time#DurationDescription -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#DurationDescription"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+    
+
+
+    <!-- https://saref.etsi.org/core/ActuatingFunction -->
+
+    <rdf:Description rdf:about="https://saref.etsi.org/core/ActuatingFunction">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasCommand"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/SetCommand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://saref.etsi.org/core/MeteringFunction -->
+
+    <rdf:Description rdf:about="https://saref.etsi.org/core/MeteringFunction">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasCommand"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/core/GetCommand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActivationDelay -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActivationDelay">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The scheduled activation delay for a slot.</rdfs:comment>
+        <rdfs:label xml:lang="en">Activation delay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActivationDelayDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActivationDelayDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the activation delay duration temporal entity</rdfs:comment>
+        <rdfs:label xml:lang="en">Activation delay duration description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActiveDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActiveDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the active duration (min and max, sum max and sum min) temporal entities</rdfs:comment>
+        <rdfs:label xml:lang="en">Active duration description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActiveDurationMax -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActiveDurationMax">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The active maximum duration a power sequence can run without interruption.</rdfs:comment>
+        <rdfs:label xml:lang="en">Active duration max</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActiveDurationMin -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActiveDurationMin">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The active mininum duration a power sequence can run without interruption.</rdfs:comment>
+        <rdfs:label xml:lang="en">Active duration min</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActiveDurationSumMax -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActiveDurationSumMax">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The active maximum duration a power sequence can run in total (summation of all active times).</rdfs:comment>
+        <rdfs:label xml:lang="en">Active duration sum max</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActiveDurationSumMin -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActiveDurationSumMin">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The active minimum duration a power sequence must run in total (summation of all active times).</rdfs:comment>
+        <rdfs:label xml:lang="en">Active duration sum min</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActuatorLevel -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActuatorLevel">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Actuator"/>
+        <rdfs:comment xml:lang="en">Independent from the ActuatorSwitch class, the ActuatorLevel class enables a user or application to model LEVEL commands (start, up, percentageAbsolute, relative, etc.). This can be used to dim a light, set the speed of an electric motor, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Actuator level</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ActuatorSwitch -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ActuatorSwitch">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Actuator"/>
+        <rdfs:comment xml:lang="en">Basic on/off operations on a simple actuator can be modelled with the ActuatorSwitch class. Whether the function turns a device itself ON or OFF, or whether it switches a specific feature, depends on the implementation. For example, one could model the super freeze program of a freezer using ActuatorSwitch class. An ON command would then activate the super freeze program and an OFF command would deactivate it. This example shall just give an idea how ActuatorSwitch can be used for more purposes than only turning devices on and off.</rdfs:comment>
+        <rdfs:label xml:lang="en">Actuator switch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/AnticipationDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/AnticipationDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the anticipation duration temporal entities</rdfs:comment>
+        <rdfs:label xml:lang="en">Anticipation duration description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/CommonDataClass -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/CommonDataClass">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/relatesToMeasurement"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/DataAttribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/cdc-id"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DataAttribute -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/DataAttribute">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/DAName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/m-o-c"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DataObject -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/DataObject">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/LogicalNode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/measuresProperty"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/CommonDataClass"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/offers"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/GetDataDefinition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/offers"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/GetDataDirectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/offers"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/GetDataValues"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/offers"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/SetDataValues"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/DOName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/DORef"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/m-o-c"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>provide means to define typed information, for example, position of a
+switch with quality information and timestamp, contained in logical nodes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DefaultDuration -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/DefaultDuration">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The duration of a slot (SHALL be present in case of &apos;determined slot&apos;). If a slot has a configurable lenght, this element SHALL reflect the currently configured lenght</rdfs:comment>
+        <rdfs:label xml:lang="en">Default duration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DefaultDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/DefaultDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the default duration temporal entity</rdfs:comment>
+        <rdfs:label xml:lang="en">Default duration description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Device -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/Device">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/exposes"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/PowerProfile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/receives"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/LoadControlEventData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/exposes"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/PowerProfile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/receives"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/LoadControlEventData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/powerSource"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/brandName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/deviceCode"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/deviceName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hardwareRevision"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/manufacturerDescription"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/manufacturerLabel"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/manufacturerNodeIdentification"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/serialNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/softwareRevision"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/vendorCode"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/vendorName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A specialization of a saref:Device that exposes a power profile with power sequences to the CEM (note that a s4ee:Device can also be called &apos;power sequence server&apos;). Most of the existing devices can expose at most 1 power profile, but there are special cases in which more than one power profiles can be exposed by the same device. For example, consider the case of a combined fridge-freezer in which there are 2 logical devices (fridge and freezer) combined in 1 physical device. This combined device can expose 2 power profiles, one for the fridge and one for the freezer. A s4ee:Device (e.g. a household appliance or a smart meter) can also receive events about overload warning severity level and related load control commands (LoadControlEventData)</rdfs:comment>
+        <rdfs:label xml:lang="en">Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DurationUncertainty -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/DurationUncertainty">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The uncertainty of the duration </rdfs:comment>
+        <rdfs:label xml:lang="en">Duration uncertainty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DurationUncertaintyDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/DurationUncertaintyDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the duration uncertainty temporal entity</rdfs:comment>
+        <rdfs:label xml:lang="en">Duration uncertainty description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EarliestStartTime -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EarliestStartTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The earliest possible start time for a power sequence or a slot. Only &apos;xs:duration&apos; value types SHALL be used to denote a relative time which relates to &apos;now&apos; as time 0.
+Note: This element applies to the first repetition of the slot number only.</rdfs:comment>
+        <rdfs:label xml:lang="en">Earliest start time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ElapsedSlotTime -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ElapsedSlotTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">If state is set to &apos;running&apos; or &apos;paused&apos; AND the slot is determined, this element CAN contain the time the slot has already been in &apos;running&apos; state (this also means the value remains constant during a &apos;paused&apos; state). Otherwise it SHALL be omitted.</rdfs:comment>
+        <rdfs:label xml:lang="en">Elapsed slot time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EndTime -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EndTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The endTime of a power sequence. If the value is available, it SHALL be denoted here. Otherwise the element SHALL be omitted.
+The end time of a slot MAY be stated in this element. The following equation SHALL apply: endTime - startTime = defaultDuration.</rdfs:comment>
+        <rdfs:label xml:lang="en">End time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EndTimeDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EndTimeDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the end time duration temporal entities</rdfs:comment>
+        <rdfs:label xml:lang="en">End time duration Description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Energy -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/Energy">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Energy"/>
+        <rdfs:comment xml:lang="en">Energy type and value in a slot (i.e., Energy, EnergyMin, EnergyMax, EnergyExpected, EnergyStandardDeviation, EnergySkewness); or the ResumeEnergyEstimated in a power sequence, i.e., the additional energy the device will consume before resuming its normal operation (after a pause)</rdfs:comment>
+        <rdfs:label xml:lang="en">Energy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EnergyExpected -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EnergyExpected">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Energy"/>
+        <rdfs:comment xml:lang="en">A possible type of energy in a slot that represents the expected energy consumption and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Energy expected</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EnergyMax -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EnergyMax">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Energy"/>
+        <rdfs:comment xml:lang="en">A possible type of energy in a slot that represents the maximum energy consumption and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Energy max</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EnergyMin -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EnergyMin">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Energy"/>
+        <rdfs:comment xml:lang="en">A possible type of energy in a slot that represents the minimum energy consumption and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Energy min</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EnergySkewness -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EnergySkewness">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Energy"/>
+        <rdfs:comment xml:lang="en">A possible type of energy in a slot that represents the energy skewness and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Energy skewness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EnergyStandardDeviation -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EnergyStandardDeviation">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Energy"/>
+        <rdfs:comment xml:lang="en">A possible type of energy in a slot  that represents the energy standard deviation and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Energy Standard Deviation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventActionConsume -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EventActionConsume">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Emergency"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Increase"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Normal"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Pause"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Reduce"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Resume"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/LoadControlEventAction"/>
+        <rdfs:comment xml:lang="en">An action type used to express a consume action to be performed as a consequence of an event used to send overload warning severity level and related load control commands to a device (e.g. a household appliance or a smart meter).</rdfs:comment>
+        <rdfs:label xml:lang="en">Event action consume</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventActionProduce -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EventActionProduce">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Emergency"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Increase"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Normal"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Pause"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Reduce"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Resume"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/LoadControlEventAction"/>
+        <rdfs:comment xml:lang="en">An action type used to express a produce action to be performed as a consequence of an event used to send overload warning severity level and related load control commands to a device (e.g. a household appliance or a smart meter).</rdfs:comment>
+        <rdfs:label xml:lang="en">Event action produce</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventStateConsume -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EventStateConsume">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventAccepted"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventCancelled"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventError"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventRejected"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventStarted"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventStopped"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/LoadControlEventState"/>
+        <rdfs:comment xml:lang="en">In the load control, it expresses a consume state of an event used to send overload warning severity level and related load control commands to a device (e.g. a household appliance or a smart meter).</rdfs:comment>
+        <rdfs:label xml:lang="en">Event state consume</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventStateProduce -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/EventStateProduce">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventAccepted"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventCancelled"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventError"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventRejected"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventStarted"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/EventStopped"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/LoadControlEventState"/>
+        <rdfs:comment xml:lang="en">In the load control, it expresses a produce state of an event an event used to send overload warning severity level and related load control commands to a device (e.g. a household appliance or a smart meter).</rdfs:comment>
+        <rdfs:label xml:lang="en">Event state produce</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/GetAllDataValues -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/GetAllDataValues">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Service"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/isOfferedBy"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/LogicalNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/represents"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/core/MeteringFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/GetDataDefinition -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/GetDataDefinition">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Service"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/isOfferedBy"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/DataObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/represents"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/core/MeteringFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/GetDataDirectory -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/GetDataDirectory">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Service"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/isOfferedBy"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/DataObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/represents"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/Reference_function"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/GetDataValues -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/GetDataValues">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Service"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/isOfferedBy"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/DataObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/represents"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/core/MeteringFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/GetLogicalDeviceDirectory -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/GetLogicalDeviceDirectory">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Service"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/isOfferedBy"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/LogicalDevice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/represents"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/Reference_function"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/GetLogicalNodeDirectory -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/GetLogicalNodeDirectory">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Service"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/isOfferedBy"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/LogicalNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/represents"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/Reference_function"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LatestEndTime -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/LatestEndTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The latest possible end time for a power sequence or a slot. Only &apos;xs:duration&apos; value types SHALL be used to denote a relative time which relates to &apos;now&apos; as time 0.
+Note: This element applies to the first repetition of the slot number only.</rdfs:comment>
+        <rdfs:label xml:lang="en">Latest end time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LoadControlEventAction -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/LoadControlEventAction">
+        <rdfs:comment xml:lang="en">An action type used to express the action to be performed as a consequence of an event used to send overload warning severity level and related load control commands to a device (e.g. a household appliance or a smart meter).</rdfs:comment>
+        <rdfs:label xml:lang="en">Load Control event action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LoadControlEventData -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/LoadControlEventData">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/TimePeriod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasDevice"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/Device"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/triggersEventActionConsume"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/triggersEventActionProduce"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/TimePeriod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasDevice"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/Device"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/triggersEventActionConsume"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/triggersEventActionProduce"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTimestamp"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTimestamp"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/eventID"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An event used to send overload warning severity level and related load control commands to a device (e.g. a household appliance or a smart meter).</rdfs:comment>
+        <rdfs:label xml:lang="en">Load control event data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LoadControlEventState -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/LoadControlEventState">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/State"/>
+        <rdfs:comment xml:lang="en">In the load control, it expresses the possible states of an event used to send overload warning severity level and related load control commands to a device (e.g. a household appliance or a smart meter).</rdfs:comment>
+        <rdfs:label xml:lang="en">Load control event state </rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LoadControlStateData -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/LoadControlStateData">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasAppliedEventActionConsume"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasAppliedEventActionProduce"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasEventStateConsume"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/EventStateConsume"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasEventStateProduce"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/EventStateProduce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasAppliedEventActionConsume"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasAppliedEventActionProduce"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasEventStateConsume"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EventStateConsume"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasEventStateProduce"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EventStateProduce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTimestamp"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTimestamp"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/eventID"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The representation of the state of an event used to send overload warning severity level and related load control commands to a device (e.g. a household appliance or a smart meter).</rdfs:comment>
+        <rdfs:label xml:lang="en">Load control state data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LogicalDevice -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/LogicalDevice">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Device"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/consistsOf"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/LogicalNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/offers"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/GetLogicalDeviceDirectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/LDName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>represents the information produced and consumed by a group of
+domain-specific application functions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/LogicalNode -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/LogicalNode">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/LogicalDevice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/consistsOf"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/DataObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/offers"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/GetAllDataValues"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/offers"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/GetLogicalNodeDirectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/LNName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/LNRef"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>contains the information produced and consumed by a single
+domain-specific application function, for example, overvoltage protection or circuitbreaker.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/MaxActivationDelay -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/MaxActivationDelay">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">Maximum delay time between the end of the previous slot and the beginning of the current slot.</rdfs:comment>
+        <rdfs:label xml:lang="en">Max activation delay</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/MaxAnticipation -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/MaxAnticipation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">This field allows the anticipation of the phase if (and only if) the previous phase has the energy set to 0 Wh, each unit is a minute.</rdfs:comment>
+        <rdfs:label xml:lang="en">Max anticipation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/MaxDuration -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/MaxDuration">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">If a slot has a configurable duration, it SHALL be present and denote the maximum supported configuration. Note: This element applies to the first repetition of the slot number only</rdfs:comment>
+        <rdfs:label xml:lang="en">Max duration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/MinDuration -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/MinDuration">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">If a slot has a configurable duration, it SHALL be present and denote the minimum supported configuration. Note: This element applies to the first repetition of the slot number only.</rdfs:comment>
+        <rdfs:label xml:lang="en">Min duration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PauseDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PauseDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the pause duration (max and min) temporal entities</rdfs:comment>
+        <rdfs:label xml:lang="en">Pause duration description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PauseDurationMax -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PauseDurationMax">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The maximum duration a power sequence can pause after the end of an activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Pause duration max</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PauseDurationMin -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PauseDurationMin">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The minimum duration a power sequence can pause after the end of an activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Pause duration min</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PauseTime -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PauseTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The pause time of a power sequence or a slot</rdfs:comment>
+        <rdfs:label xml:lang="en">Pause time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Power -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/Power">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Power"/>
+        <rdfs:comment xml:lang="en">Power type and value in a slot (i.e. power, powerMin, powerMax, powerExpectedValue, powerStandardDeviation, powerSkewness)</rdfs:comment>
+        <rdfs:label xml:lang="en">Power</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PowerExpected -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PowerExpected">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Power"/>
+        <rdfs:comment xml:lang="en">A possible type of power in a slot that represents the expected power consumption and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Power expected </rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PowerMax -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PowerMax">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Power"/>
+        <rdfs:comment xml:lang="en">A possible type of power in a slot that represents the maximum power consumption and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Power max</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PowerMin -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PowerMin">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Power"/>
+        <rdfs:comment xml:lang="en">A possible type of power in a slot that represents the minimum power consumption and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Power min</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PowerProfile -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PowerProfile">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Profile"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/belongsTo"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/Device"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/belongsTo"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/Device"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/alternativesCount"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/nodeRemoteControllable"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/supportsReselection"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/supportsSingleSlotSchedulingOnly"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/totalSequencesCountMax"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A way to model curves of power and energy over time, which also provides definitions for the modelling of power scheduling including alternative plans. With a PowerProfile, a device (or power sequences server) exposes the power sequences that are potentially relevant for the CEM (or power sequences client). </rdfs:comment>
+        <rdfs:label xml:lang="en">Power profile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PowerSequence -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PowerSequence">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/consistsOf"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/Slot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasPrice"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/ResumeCostEstimated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasState"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasEnergy"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/ResumeEnergyEstimated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/consistsOf"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/Slot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasState"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/StartTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasPrice"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/ResumeCostEstimated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/ActiveDurationMax"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/ActiveDurationMin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/ActiveDurationSumMax"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/ActiveDurationSumMin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EarliestStartTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/ElapsedSlotTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EndTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/LatestEndTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/PauseDurationMax"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/PauseDurationMin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/RemainingSlotTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasEnergy"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/ResumeEnergyEstimated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/taskIdentifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/valueSource"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/sequenceID"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/sequenceRemoteControllable"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasDescription"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/activeRepetitionNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/activeSlotNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/cheapest"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/greenest"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/isPausable"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/isStoppable"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/maxCyclesPerDay"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/repetitionsTotal"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The specification of a task, such as wash or tumble dry, according to user preferences and/or manufacturer&apos;s settings for a certain device.  It is the most &apos;coarse&apos; view, a power sequence can represent all single steps of a whole task,where the single steps are represented by slots. If the power sequence is pausable by the bound power sequences client, the property &apos;saref:isInterruptionPossible&apos; SHALL be present and set to true. Otherwise it SHALL be omitted. If the power sequence is stoppable by the bound power sequences client, the property &apos;saref:isFlexible&apos; SHALL be present and set to true. Otherwise it SHALL be omitted.</rdfs:comment>
+        <rdfs:label xml:lang="en">Power sequence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PowerSequenceState -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PowerSequenceState">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Completed"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Inactive"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Invalid"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Paused"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Pending"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Running"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Scheduled"/>
+                    <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/ScheduledPaused"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/State"/>
+        <rdfs:comment xml:lang="en">The current state of the power sequence. It can assume one of the values &apos;running&apos;, &apos;paused&apos;, &apos;scheduled&apos;, &apos;scheduled paused&apos;, &apos;pending&apos;, &apos;inactive&apos;, &apos;completed&apos;,  or &apos;invalid&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">Power sequence state</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PowerSkewness -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PowerSkewness">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Power"/>
+        <rdfs:comment xml:lang="en">A possible type of power in a slot that represents the power skewness and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Power skewness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/PowerStandardDeviation -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/PowerStandardDeviation">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Power"/>
+        <rdfs:comment xml:lang="en">A possible type of power in a slot that represents the power standard deviation and its value</rdfs:comment>
+        <rdfs:label xml:lang="en">Power standard deviation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Reference_function -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/Reference_function">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Function"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasCommand"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/core/GetCommand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/RemainingPauseTime -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/RemainingPauseTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The duration that the current slot (s4ee:activeSlotNumber) permits being paused. This element SHALL ONLY be present if the power sequence is interruptible. Otherwise, it SHALL be omitted. In case the power sequence is interruptible the following rules apply: If the element is absent this means there is no explicit pause duration restriction for the current slot; a value of 0s denoted the slot does not permit being paused.</rdfs:comment>
+        <rdfs:label xml:lang="en">Remaining pause time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/RemainingSlotTime -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/RemainingSlotTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">If state is set to &apos;running&apos; or &apos;paused&apos; AND the slot is determined, this element SHALL contain the time the slot still needs to be in &apos;running&apos; state (this also means the value remains constant during a &apos;paused&apos; state). Otherwise it SHALL be omitted.</rdfs:comment>
+        <rdfs:label xml:lang="en">Remaining slot time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ResumeCostEstimated -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ResumeCostEstimated">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Price"/>
+        <rdfs:comment xml:lang="en">In a power sequence the additional costs for the resumption of a device to its normal operation (after a pause).</rdfs:comment>
+        <rdfs:label xml:lang="en">Resume cost estimated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ResumeEnergyEstimated -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/ResumeEnergyEstimated">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4ener/Energy"/>
+        <rdfs:comment xml:lang="en">In a power sequence, the additional energy the device will consume before resuming its normal operation (after a pause). This is only an estimated value which will not be added to the value stated in any slot value information.</rdfs:comment>
+        <rdfs:label xml:lang="en">Resume energy estimated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/SetCommand -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/SetCommand">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Command"/>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/SetDataValues -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/SetDataValues">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Service"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/isOfferedBy"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/DataObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/represents"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/core/ActuatingFunction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Slot -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/Slot">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/core/Time"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/belongsTo"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/PowerSequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasEnergyValueType"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/Energy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasPowerValueType"/>
+                <owl:allValuesFrom rdf:resource="https://saref.etsi.org/saref4ener/Power"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/hasValueType"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Energy"/>
+                            <rdf:Description rdf:about="https://saref.etsi.org/saref4ener/Power"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/belongsTo"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/PowerSequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/DefaultDuration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/DurationUncertainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EarliestStartTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/EndTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/LatestEndTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/MaxDuration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/MinDuration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/RemainingPauseTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4ener/StartTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/slotNumber"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/core/hasDescription"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/optionalSlot"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4ener/slotActivated"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The single steps of a power sequence are represented by slots. A slot is associated with a slot number (while a power sequence is associated with a power sequence identifier). The slot numbers of two power sequences should be considered independent from each other, i.e., slot number 7 of sequence 1 describes a different slot than slot number 7 of sequence 2. Therefore a slot is only uniquely identified in combination with a sequence ID. </rdfs:comment>
+        <rdfs:label xml:lang="en">Slot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/SlotTimeDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/SlotTimeDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the slot time duration temporal entities</rdfs:comment>
+        <rdfs:label xml:lang="en">Slot time duration description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/StartTime -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/StartTime">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The startTime of a power sequence or slot. SHALL be present</rdfs:comment>
+        <rdfs:label xml:lang="en">Start time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/StartTimeDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/StartTimeDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the start time duration temporal entities</rdfs:comment>
+        <rdfs:label xml:lang="en">Start time duration description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/State -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/State">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/State"/>
+        <rdfs:comment xml:lang="en">An entity that represents the possible states in SAREF4EE</rdfs:comment>
+        <rdfs:label xml:lang="en">State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/TimePeriod -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/TimePeriod">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment xml:lang="en">The time period associated with load control event data</rdfs:comment>
+        <rdfs:label xml:lang="en">Time period</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/TimePeriodDurationDescription -->
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4ener/TimePeriodDurationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
+        <rdfs:comment xml:lang="en">The duration description for the time period duration temporal entities</rdfs:comment>
+        <rdfs:label xml:lang="en">Time period duration description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Completed -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Completed">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+        <rdfs:comment xml:lang="en">Power sequence state with value &apos;completed&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Completed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/DPCM -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/DPCM">
+        <has_LDService rdf:resource="https://saref.etsi.org/saref4ener/GetLogicalDeviceDirectory"/>
+        <LDName>asd</LDName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Emergency -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Emergency">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+        <rdfs:comment xml:lang="en">Load control event action with value &apos;emergency&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Emergency</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventAccepted -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/EventAccepted">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateProduce"/>
+        <rdfs:comment xml:lang="en">Load control state with value &apos;event accepted&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Event accepted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventCancelled -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/EventCancelled">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateProduce"/>
+        <rdfs:comment xml:lang="en">Load control state with value &apos;event cancelled&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Event cancelled</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventError -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/EventError">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateProduce"/>
+        <rdfs:comment xml:lang="en">Load control state with value &apos;event error&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Event error</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventRejected -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/EventRejected">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateProduce"/>
+        <rdfs:comment xml:lang="en">Load control state with value &apos;event rejected&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Event rejected</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventStarted -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/EventStarted">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateProduce"/>
+        <rdfs:comment xml:lang="en">Load control state with value &apos;event started&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Event started</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/EventStopped -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/EventStopped">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventStateProduce"/>
+        <rdfs:comment xml:lang="en">Load control state with value &apos;event stopped&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Event stopped</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/GetLogicalDeviceDirectory -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/GetLogicalDeviceDirectory"/>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Inactive -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Inactive">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+        <rdfs:comment xml:lang="en">Power sequence state with value &apos;inactive&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Inactive</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Increase -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Increase">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+        <rdfs:comment xml:lang="en">Load control event action with value &apos;increase&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Increase</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Invalid -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Invalid">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+        <rdfs:comment xml:lang="en">Power sequence state with value &apos;invalid&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Invalid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Normal -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Normal">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+        <rdfs:comment xml:lang="en">The value NORMAL used to instantiate the Load Control Event Action class and MeasurandState class</rdfs:comment>
+        <rdfs:label xml:lang="en">Normal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Pause -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Pause">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+        <rdfs:comment xml:lang="en">Load control event action with value &apos;pause&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Pause</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Paused -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Paused">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+        <rdfs:comment xml:lang="en">Power sequence state or sensor state with value &apos;paused&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Paused</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Pending -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Pending">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+        <rdfs:comment xml:lang="en">Power sequence state with value &apos;pending&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Pending</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Reduce -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Reduce">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+        <rdfs:comment xml:lang="en">Load control event action with value &apos;reduce&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Reduce</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Resume -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Resume">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionConsume"/>
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/EventActionProduce"/>
+        <rdfs:comment xml:lang="en">Load control event action with value &apos;resume&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Resume</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Running -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Running">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+        <rdfs:comment xml:lang="en">Power sequence state with value &apos;running&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Running</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/Scheduled -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/Scheduled">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+        <rdfs:comment xml:lang="en">Power sequence state with value &apos;scheduled&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Scheduled</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://saref.etsi.org/saref4ener/ScheduledPaused -->
+
+    <owl:NamedIndividual rdf:about="https://saref.etsi.org/saref4ener/ScheduledPaused">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4ener/PowerSequenceState"/>
+        <rdfs:comment xml:lang="en">Power sequence state with value &apos;scheduled paused&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Scheduled paused</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
